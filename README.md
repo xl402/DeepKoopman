@@ -14,3 +14,6 @@ Script `networks.py` contains all networks discussed in the thesis, including:
 Left: Predicted trajectories overlaying ground truth. Right: Top two Koopman eigenfunctions (which together, convey the Hamiltonian energy of the system)
 
 ![Pendulum2](https://i.imgur.com/j83vGxn.gif)
+
+## Fluid Flow Example
+![Fluid](https://i.imgur.com/Y35ktWl.gif)
