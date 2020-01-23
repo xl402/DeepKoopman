@@ -7,6 +7,6 @@ Script `networks.py` contains all networks discussed in the thesis, including:
 - **DENIS**: Deep Encoder with Initial State parameterisation
 - **DEINA**: Deep Encoder for Input Non-Affine systems
 
-![Pendulum](https://media.giphy.com/media/kHNMFTJJJ2qrx7Z83s/giphy.gif)
+![Pendulum](https://imgur.com/xYJKNjh)
 
 
