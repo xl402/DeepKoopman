@@ -16,5 +16,5 @@ Left: Predicted trajectories overlaying ground truth. Right: Top two Koopman eig
 ![Pendulum2](https://i.imgur.com/j83vGxn.gif)
 
 ## Fluid Flow Example
-<img src="https://i.imgur.com/5MuBOFo.gif" width="425"/> <img src="https://i.imgur.com/Y35ktWl.gif" width="425"/> 
+<img src="https://i.imgur.com/5MuBOFo.gif" width="280"/> <img src="https://i.imgur.com/Y35ktWl.gif" width="570"/> 
 
