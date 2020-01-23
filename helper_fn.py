@@ -5,6 +5,7 @@ import torch
 import matplotlib.pyplot as plt
 import imageio
 import seaborn as sns
+from mpl_toolkits.mplot3d import Axes3D
 
 def load_df(log_dir, reset_logs):
     if not os.path.isfile(log_dir) or reset_logs:
@@ -71,6 +72,7 @@ def plot_val(val_data, model, mse, fig_dir, num=10, figsize=(6, 4)):
     model.eval()
     plt.figure(figsize=figsize)
     val_enc_gt, val_enc_traj, _ = model(val_data)
+
     for i in range(10):
         n_shifts = val_enc_traj.shape[1]
         p = plt.plot(val_data[i, :n_shifts, 0], val_data[i, :n_shifts, 1], '--')
@@ -78,6 +80,29 @@ def plot_val(val_data, model, mse, fig_dir, num=10, figsize=(6, 4)):
     plt.axis('off')
     plt.xlim([-3, 3])
     plt.ylim([-2, 2])
+    plt.title("MSE: {:.3f}".format(mse))
+    plt.savefig(fig_dir, bbox_inches='tight')
+    plt.close()
+
+def plot_val3D(val_data, model, mse, fig_dir, num=10, figsize=(10, 7)):
+    model.eval()
+    val_enc_gt, val_enc_traj, _ = model(val_data)
+    val_enc_gt = val_enc_gt.detach()
+    val_enc_traj = val_enc_traj.detach()
+    fig = plt.figure(figsize=figsize)
+    ax = fig.add_subplot(111, projection='3d')
+    for i in range(10):
+        n_shifts = val_enc_traj.shape[1]
+        p = ax.plot(val_data[i, :n_shifts, 0].numpy(),
+        val_data[i, :n_shifts, 1].numpy(),
+        val_data[i, :n_shifts, 2].numpy(), '--')
+        ax.plot(val_enc_traj[i, :n_shifts, 0].numpy(),
+        val_enc_traj[i, :n_shifts, 1].numpy(),
+        val_enc_traj[i, :n_shifts, 2].numpy(), c=p[0].get_color())
+    ax.set_xlim([-1, 1])
+    ax.set_ylim([-1, 1])
+    ax.set_zlim([0, 1])
+    ax.set_axis_off()
     plt.title("MSE: {:.3f}".format(mse))
     plt.savefig(fig_dir, bbox_inches='tight')
     plt.close()
@@ -121,9 +146,9 @@ def plot_layers(parameters, mse, dist_dir=None, n_rows=3):
         plt.show()
 
 
-def make_gif(fig_dir, root_dir, model_name, t=10, max_len=-1, ext='trj'):
+def make_gif(fig_dir, root_dir, model_name, t=10, sample=5, ext='trj'):
     images = []
-    for file_name in sorted(os.listdir(fig_dir))[:max_len]:
+    for file_name in sorted(os.listdir(fig_dir))[::sample]:
         if file_name.endswith('.png'):
             file_path = os.path.join(fig_dir, file_name)
             images.append(imageio.imread(file_path))
@@ -140,25 +165,30 @@ def plot_losses(model_df):
     axes[0].plot(model_df['val_loss'], linewidth=2, c='r', label='val')
     axes[0].set_title('Loss')
     axes[0].legend()
+    axes[0].set_yscale('log')
+
 
     axes[1].plot(model_df['train_state_mse'], label='train')
     axes[1].plot(model_df['val_state_mse'], linewidth=2, c='r', label='val')
     axes[1].set_title('State MSE')
     axes[1].legend()
+    axes[1].set_yscale('log')
 
     axes[2].plot(model_df['train_latent_mse'], label='train')
     axes[2].plot(model_df['val_latent_mse'], linewidth=2, c='r', label='val')
     axes[2].set_title('Latent MSE')
     axes[2].legend()
+    axes[2].set_yscale('log')
 
     axes[3].plot(model_df['train_state_inf'], label='train')
     axes[3].plot(model_df['val_state_inf'], linewidth=2, c='r', label='val')
     axes[3].set_title('Mean Max Deviation')
     axes[3].legend()
+    axes[3].set_yscale('log')
 
     for i in range(2):
-        axes[i].set_ylim([0, 1.5])
-    #axes[2].set_ylim([0, 0.1])
+        axes[i].set_ylim([None, 1.5])
+    axes[2].set_ylim([None, 0.02])
     #axes[3].set_ylim([0, None])
     plt.show()
 
