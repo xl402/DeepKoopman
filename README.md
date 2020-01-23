@@ -1,4 +1,4 @@
-# DeepKoopman
+# Deep Koopman
 *CUED IIB Master's Thesis Project*
 
 ## Introduction: 
