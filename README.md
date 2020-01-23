@@ -17,3 +17,4 @@ Left: Predicted trajectories overlaying ground truth. Right: Top two Koopman eig
 
 ## Fluid Flow Example
 ![Fluid](https://i.imgur.com/Y35ktWl.gif)
+![Fluid2](https://i.imgur.com/5MuBOFo.gif)
