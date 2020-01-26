@@ -20,3 +20,6 @@ Left: Predicted trajectories overlaying ground truth. Right: Top Koopman eigenfu
 
 <img src="https://i.imgur.com/5MuBOFo.gif" width="280"/> <img src="https://i.imgur.com/Y35ktWl.gif" width="570"/> 
 
+## Koopman Operator Optimal Control
+
+<img src="https://i.imgur.com/YpqiG7r.mp4" width="280"/> <img src="https://i.imgur.com/YpqiG7r.mp4" width="570"/> 
