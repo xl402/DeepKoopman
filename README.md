@@ -11,7 +11,7 @@ Script `networks.py` contains all networks discussed in the thesis, including:
 - **DEINA**: Deep Encoder for Input Non-Affine systems
 
 ## Koopman Operator Optimal Control
-By lifting system state timensions, system dynamics become globally linear, where LQR is readily applied. This technique is compared against locally iterative linearization approach, i.e. Iterative LQR (iLQR). Hamiltonian energy increases from top left to bottom right.
+By lifting system state timensions, system dynamics become globally linear, where LQR is readily applied. This technique is compared against iterative local linearization approach, i.e. Iterative LQR (iLQR). Hamiltonian energy increases from top left to bottom right.
 
 <img src="https://i.imgur.com/jy9Knpv.gif" width="700"/>
 
