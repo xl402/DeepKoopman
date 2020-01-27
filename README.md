@@ -21,5 +21,5 @@ Left: Predicted trajectories overlaying ground truth. Right: Top Koopman eigenfu
 <img src="https://i.imgur.com/5MuBOFo.gif" width="280"/> <img src="https://i.imgur.com/Y35ktWl.gif" width="570"/> 
 
 ## Koopman Operator Optimal Control
-By lifting system state timensions, system dynamics become globally linear, where LQR is readily applied. This technique is compared against locally iterative linearization approach, i.e. Iterative LQR (iLQR).
-<img src="https://i.imgur.com/PFMzbwC.gif" width="750"/>
+By lifting system state timensions, system dynamics become globally linear, where LQR is readily applied. This technique is compared against locally iterative linearization approach, i.e. Iterative LQR (iLQR). Hamiltonian energy increases from top left to bottom right.
+<img src="https://i.imgur.com/jy9Knpv.gif" width="760"/>
