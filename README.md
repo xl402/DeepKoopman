@@ -22,5 +22,4 @@ Left: Predicted trajectories overlaying ground truth. Right: Top Koopman eigenfu
 
 ## Koopman Operator Optimal Control
 By lifting system state timensions, system dynamics become globally linear, where LQR is readily applied. This technique is compared against locally iterative linearization approach, i.e. Iterative LQR (iLQR).
-
-![koopman_demo](https://i.imgur.com/PFMzbwC.gif)
+<img src="https://i.imgur.com/PFMzbwC.gif" width="750"/>
