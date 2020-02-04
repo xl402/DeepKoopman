@@ -6,9 +6,9 @@ The Koopman operator framework is becoming increasingly popular for obtaining li
 
 ## Networks Overview:
 Script `networks.py` contains all networks discussed in the thesis, including:
-- **LREN**: Linearly Recurrent Encoder Network
-- **DENIS**: Deep Encoder with Initial State parameterisation
-- **DEINA**: Deep Encoder for Input Non-Affine systems
+- **LREN**: **L**inearly **R**ecurrent **E**ncoder **N**etwork
+- **DENIS**: **D**eep **E**ncoder with **I**nitial **S**tate Parameterisation
+- **DEINA**: **D**eep **E**ncoder for **I**nput **N**on-**A**ffine systems
 
 ## Koopman Operator Optimal Control
 By lifting system state timensions, system dynamics become globally linear, where LQR is readily applied. This technique is compared against iterative local linearization approach, i.e. Iterative LQR (iLQR). Hamiltonian energy increases from top left to bottom right.
